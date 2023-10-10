@@ -1,0 +1,6 @@
+@import './reset.css';
+@import './header.css';
+
+body {
+  background-color: var(--color-violet);
+}

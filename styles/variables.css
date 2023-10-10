@@ -1,0 +1,8 @@
+:root {
+  /* fonts */
+  --title-font: 600 23px/24px 'Segoe UI', sans-serif;
+  
+  /* colors */
+  --color-violet: rgba(103, 37, 168, 1);
+  --color-white: rgba(255, 255, 255, 1);
+}
