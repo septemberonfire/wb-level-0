@@ -1,6 +1,9 @@
 :root {
   /* fonts */
-  --title-font: 600 23px/24px 'Segoe UI', sans-serif;
+  --font-bold-26-24: 600 21px/25px 'Segoe UI Bold', sans-serif;
+  --font-bold-20-28: 700 20px/28px 'Segoe UI Bold', sans-serif;
+  --font-regular-16-24: 400 16px/24px 'Segoe UI Bold', sans-serif;
+  
   
   /* colors */
   --color-violet: rgba(103, 37, 168, 1);

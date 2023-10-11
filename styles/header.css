@@ -1,16 +1,15 @@
 @import "./variables.css";
 
 .header {
-  height: 56px;
   display: flex;
-  gap: 16px;
   justify-content: space-between;
   padding: 14px 13px;
 }
 
 .header_title {
-  font: var(--title-font);
+  font: var(--font-bold-26-24);
   color: var(--color-white);
+  letter-spacing: 0.02em;
 }
 
 .header_button-search {
@@ -35,4 +34,22 @@
   height: 3px;
   margin-bottom: 6px;
   border-radius: 4px;
+}
+
+.header_button-profile {
+  display: none;
+  cursor: pointer;
+}
+
+.header_button-basket {
+  display: none;
+  cursor: pointer;
+}
+
+.header_inputWrap {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
 }

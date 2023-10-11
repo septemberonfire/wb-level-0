@@ -13,13 +13,40 @@
         alt="burger-menu"
         class="header_menu"
       />
-
       <p class="header_title">ТОВАРЫ И ТОЧКА</p>
+      <div class="header_inputWrap">
+        <input type="text" placeholder="Я ищу..." />
+        <img src="./images/icons/icon-search-input.svg" alt="search" />
+      </div>
       <img
         src="./images/icons/icon-search.svg"
         alt="search"
         class="header_button-search"
       />
+      <img
+        src="./images/icons/icon-profile.svg"
+        alt="profile"
+        class="header_button-profile"
+      />
+      <img
+        src="./images/icons/icon-basket.svg"
+        alt="basket"
+        class="header_button-basket"
+      />
     </header>
+    <section class="basket">
+      <div class="container">
+        <h2 class="basket_title">Корзина</h2>
+        <div class="basket_checkboxWrap">
+          <input type="checkbox" id="all" name="all" class="basket_checkbox" />
+          <label for="all" class="basket_checkboxLabel">Выбрать все</label>
+          <img
+            src="./images/icons/icon-dropdown.svg"
+            alt="dropdown"
+            class="basket_checkboxButton"
+          />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
