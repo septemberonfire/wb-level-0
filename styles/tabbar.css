@@ -1,0 +1,12 @@
+@import "./variables.css";
+
+.tabbar {
+  background-color: var(--color-white);
+  padding: 14px 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabbar_iconWrap {
+  position: relative;
+}

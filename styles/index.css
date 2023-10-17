@@ -1,35 +1,55 @@
-@import './reset.css';
-@import './header.css';
-@import './basket.css';
+@import "./reset.css";
+@import "./header.css";
+@import "./basket.css";
+@import "./charge.css";
+@import "./footer.css";
+@import "./tabbar.css";
 
 @font-face {
-  font-family: 'Segoe UI';
-  src: url('../fonts/Segoe\ UI.ttf');
+  font-family: "Segoe UI";
+  src: url("../fonts/segoe-ui2/SegoeUI.ttf");
 }
 
 @font-face {
-  font-family: 'Segoe UI Bold';
-  src: url('../fonts/Segoe\ UI\ Bold.ttf');
+  font-family: "Segoe UI Bold";
+  src: url("../fonts/segoe-ui2/SegoeUI-Bold.ttf");
 }
 
 @font-face {
-  font-family: 'Segoe UI Italic';
-  src: url('../fonts/Segoe\ UI\ Italic.ttf');
+  font-family: "Segoe UI Italic";
+  src: url("../fonts/segoe-ui2/SegoeUI-Italic.ttf");
 }
 
 @font-face {
-  font-family: 'Segoe UI Bold Italic';
-  src: url('../fonts/Segoe\ UI\ Bold\ Italic.ttf');
+  font-family: "Segoe UI Bold Italic";
+  src: url("../fonts/segoe-ui2/SegoeUI-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Semibold";
+  src: url("../fonts/segoe-ui2/SegoeUI-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Light";
+  src: url("../fonts/segoe-ui2/SegoeUI-Light.ttf");
 }
 
 body {
   background-color: var(--color-violet);
-  font-family: 'Segoue UI';
+  font-family: "Segoue UI";
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0px 16px;
+  background-color: var(--color-smoky);
+  border-radius: 24px;
+  padding: 15px 0px 24px;
 }
 
+@media screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+}

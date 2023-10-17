@@ -1,0 +1,8 @@
+@import "./variables.css";
+
+.footer_caption {
+  color: rgba(255, 255, 255, 0.70);
+  font: var(--font-regular-13-16);
+  padding: 24px;
+  text-align: center;
+}

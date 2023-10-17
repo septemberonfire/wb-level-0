@@ -34,18 +34,496 @@
         class="header_button-basket"
       />
     </header>
-    <section class="basket">
-      <div class="container">
-        <h2 class="basket_title">Корзина</h2>
-        <div class="basket_checkboxWrap">
-          <input type="checkbox" id="all" name="all" class="basket_checkbox" />
-          <label for="all" class="basket_checkboxLabel">Выбрать все</label>
-          <img
-            src="./images/icons/icon-dropdown.svg"
-            alt="dropdown"
-            class="basket_checkboxButton"
-          />
+    <div class="container">
+      <section class="basket">
+        <div class="basket_container">
+          <h2 class="basket_title">Корзина</h2>
+          <div class="basket_checkboxWrap">
+            <input
+              type="checkbox"
+              id="all"
+              name="all"
+              class="basket_checkbox"
+            />
+            <label for="all" class="basket_checkboxLabel">Выбрать все</label>
+            <img
+              src="./images/icons/icon-dropdown.svg"
+              alt="dropdown"
+              class="basket_dropdownButton"
+            />
+          </div>
+          <div class="basket_separator"></div>
+
+          <div class="basket_products">
+            <div class="basket_productsItem">
+              <div class="basket_productImgWrap">
+                <input
+                  type="checkbox"
+                  id="first"
+                  name="first"
+                  class="basket_productCheckbox"
+                />
+                <div class="basket_productSize">56</div>
+                <img
+                  src="./images/products/product-img1.png"
+                  class="basket_productImg"
+                />
+              </div>
+
+              <div class="basket_productCaption">
+                <p class="basket_productCaptionName">
+                  Футболка UZcotton мужская
+                </p>
+                <p class="basket_productCaptionColor">Цвет: белый</p>
+                <p class="basket_productCaptionStore">Коледино WB</p>
+              </div>
+              <div class="basket_productBtns">
+                <div class="basket_productCounter">
+                  <div class="basket_counterMinus">−</div>
+                  <div class="basket_counterAmount">1</div>
+                  <div class="basket_counterPlus">+</div>
+                </div>
+                <p class="basket_productRemains">Осталось 2 шт.</p>
+                <div class="basket_productBtnWrap">
+                  <img
+                    src="./images/icons/icon-favourite.svg"
+                    alt="favourite"
+                    class="basket_productFavourite"
+                  />
+                  <img
+                    src="./images/icons/icon-delete.svg"
+                    alt="delete"
+                    class="basket_productDelete"
+                  />
+                </div>
+              </div>
+              <div class="basket_productPrice">
+                <div class="basket_productActualPrice">522 сом</div>
+                <div class="basket_productOldPrice">1051 сом</div>
+              </div>
+            </div>
+            <div class="basket_separator"></div>
+            <div class="basket_productsItem">
+              <div class="basket_productImgWrap">
+                <input
+                  type="checkbox"
+                  id="second"
+                  name="second"
+                  class="basket_productCheckbox"
+                />
+                <img
+                  src="./images/products/product-img2.png"
+                  class="basket_productImg"
+                />
+              </div>
+
+              <div class="basket_productCaption">
+                <p class="basket_productCaptionName">
+                  Силиконовый чехол картхолдер (отверстия) для...
+                </p>
+                <p class="basket_productCaptionColor">Цвет: прозрачный</p>
+                <p class="basket_productCaptionStore">Коледино WB</p>
+              </div>
+              <div class="basket_productBtns">
+                <div class="basket_productCounter">
+                  <div class="basket_counterMinus">−</div>
+                  <div class="basket_counterAmount">200</div>
+                  <div class="basket_counterPlus">+</div>
+                </div>
+                <div class="basket_productBtnWrap">
+                  <img
+                    src="./images/icons/icon-favourite.svg"
+                    alt="favourite"
+                    class="basket_productFavourite"
+                  />
+                  <img
+                    src="./images/icons/icon-delete.svg"
+                    alt="delete"
+                    class="basket_productDelete"
+                  />
+                </div>
+              </div>
+              <div class="basket_productPrice">
+                <div class="basket_productActualPrice">2 100 047 сом</div>
+                <div class="basket_productOldPrice">2 300 047 сом</div>
+              </div>
+            </div>
+            <div class="basket_separator"></div>
+            <div class="basket_productsItem">
+              <div class="basket_productImgWrap">
+                <input
+                  type="checkbox"
+                  id="second"
+                  name="second"
+                  class="basket_productCheckbox"
+                />
+                <img
+                  src="./images/products/product-img3.png"
+                  class="basket_productImg"
+                />
+              </div>
+
+              <div class="basket_productCaption">
+                <p class="basket_productCaptionName">
+                  Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                </p>
+
+                <p class="basket_productCaptionStore">Коледино WB</p>
+              </div>
+              <div class="basket_productBtns">
+                <div class="basket_productCounter">
+                  <div class="basket_counterMinus">−</div>
+                  <div class="basket_counterAmount">2</div>
+                  <div class="basket_counterPlus">+</div>
+                </div>
+                <p class="basket_productRemains">Осталось 2 шт.</p>
+                <div class="basket_productBtnWrap">
+                  <img
+                    src="./images/icons/icon-favourite.svg"
+                    alt="favourite"
+                    class="basket_productFavourite"
+                  />
+                  <img
+                    src="./images/icons/icon-delete.svg"
+                    alt="delete"
+                    class="basket_productDelete"
+                  />
+                </div>
+              </div>
+              <div class="basket_productPrice">
+                <div class="basket_productActualPrice">494 сом</div>
+                <div class="basket_productOldPrice">950 сом</div>
+              </div>
+            </div>
+          </div>
+          <div class="basket_absent">
+            <div class="basket_absentTitleWrap">
+              <h4 class="basket_absentTitle">Отсутствуют · 3 товара</h4>
+              <img
+                src="./images/icons/icon-dropdown.svg"
+                alt="dropdown"
+                class="basket_dropdownButton"
+              />
+            </div>
+            <div class="basket_separator"></div>
+            <div class="basket_absentProducts">
+              <div class="basket_absentItem">
+                <div class="basket_absentInfo">
+                  <div class="basket_productImgWrap">
+                    <img
+                      src="./images/products/absent-img1.png"
+                      alt="first-absent"
+                    />
+                    <div class="basket_productSize">56</div>
+                  </div>
+                  <div class="basket_absentCaption">
+                    <div class="basket_absentCaptionName">
+                      Футболка UZcotton мужская
+                    </div>
+                    <div class="basket_absentCaptionColor">Цвет: белый</div>
+                  </div>
+                </div>
+                <div class="basket_absentBtns">
+                  <img
+                    src="./images/icons/icon-favourite.svg"
+                    alt="favourite"
+                  />
+                  <img src="./images/icons/icon-delete.svg" alt="delete" />
+                </div>
+              </div>
+              <div class="basket_separator"></div>
+
+              <div class="basket_absentItem">
+                <div class="basket_absentInfo">
+                  <div class="basket_productImgWrap">
+                    <img
+                      src="./images/products/absent-img2.png"
+                      alt="second-absent"
+                    />
+                  </div>
+                  <div class="basket_absentCaption">
+                    <div class="basket_absentCaptionName">
+                      Силиконовый чехол картхолдер (отверстия) для...
+                    </div>
+                    <div class="basket_absentCaptionColor">
+                      Цвет: прозрачный
+                    </div>
+                  </div>
+                </div>
+                <div class="basket_absentBtns">
+                  <img
+                    src="./images/icons/icon-favourite.svg"
+                    alt="favourite"
+                  />
+                  <img src="./images/icons/icon-delete.svg" alt="delete" />
+                </div>
+              </div>
+              <div class="basket_separator"></div>
+
+              <div class="basket_absentItem">
+                <div class="basket_absentInfo">
+                  <div class="basket_productImgWrap">
+                    <img
+                      src="./images/products/absent-img3.png"
+                      alt="second-absent"
+                    />
+                    <div class="basket_productSize">56/54/52...</div>
+                  </div>
+                  <div class="basket_absentCaption">
+                    <div class="basket_absentCaptionName">
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                    </div>
+                  </div>
+                </div>
+                <div class="basket_absentBtns">
+                  <img
+                    src="./images/icons/icon-favourite.svg"
+                    alt="favourite"
+                  />
+                  <img src="./images/icons/icon-delete.svg" alt="delete" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <section class="basket_delivery">
+          <div class="basket_deliveryTitleWrap">
+            <h3 class="basket_deliveryTitle">Способ доставки</h3>
+            <p class="basket_deliveryChanger">Изменить</p>
+          </div>
+          <div class="basket_deliveryContentWrap">
+            <div class="basket_deliveryPickpoint">
+              <h4 class="basket_deliveryPickpointTitle">Пункт выдачи</h4>
+              <div class="basket_deliveryPickpointContent">
+                <p class="basket_deliveryPickpointAddress">
+                  Бишкек, улица Ахматбека Суюмбаева, 12/1
+                </p>
+                <div class="basket_deliveryPickpointRatingWrap">
+                  <img src="./images/icons/icon-star.svg" alt="star" />
+                  <p class="basket_deliveryPickpointRating">4.99</p>
+                  <p class="basket_deliveryPickpointWorktime">
+                    Ежедневно с 10 до 21
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="basket_deliveryCost">
+              <h3 class="basket_deliveryCostTitle">Стоимость доставки</h3>
+              <p class="basket_deliveryCostValue">Бесплатно</p>
+            </div>
+
+            <div class="basket_deliverySupply">
+              <h4 class="basket_deliverySupplyTitle">5—6 февраля</h4>
+              <div class="basket_deliverySupplyProducts">
+                <div class="basket_deliverySupplyItemWrap">
+                  <img
+                    src="./images/products/product-img1.png"
+                    alt="first"
+                    class="basket_deliverySupplyItem"
+                  />
+                </div>
+                <div class="basket_deliverySupplyItemWrap">
+                  <img
+                    src="./images/products/product-img2.png"
+                    alt="second"
+                    class="basket_deliverySupplyItem"
+                  />
+                  <div class="basket_deliverySupplyItemAmount">184</div>
+                </div>
+                <div class="basket_deliverySupplyItemWrap">
+                  <img
+                    src="./images/products/product-img3.png"
+                    alt="third"
+                    class="basket_deliverySupplyItem"
+                  />
+                  <div class="basket_deliverySupplyItemAmount">2</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="basket_deliverySupply">
+              <h4 class="basket_deliverySupplyTitle">7—8 февраля</h4>
+              <div class="basket_deliverySupplyProducts">
+                <div class="basket_deliverySupplyItemWrap">
+                  <img
+                    src="./images/products/product-img2.png"
+                    alt="second"
+                    class="basket_deliverySupplyItem"
+                  />
+                  <div class="basket_deliverySupplyItemAmount">16</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="basket_tooltipWrap">
+              <img
+                src="./images/icons/icon-delivery.svg"
+                alt="back-delivery"
+                class="basket_tooltipImg"
+              />
+              <p class="basket_tooltipCaption">
+                Обратная доставка товаров на склад при отказе —
+                <a class="basket_tooltipCaption-underlined" href="#"
+                  >бесплатно</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="basket_payment">
+          <div class="basket_paymentTitleWrap">
+            <h3 class="basket_paymentTitle">Способ оплаты</h3>
+            <p class="basket_paymentChanger">Изменить</p>
+          </div>
+          <div class="basket_paymentCard">
+            <div class="basket_paymentSystem">
+              <img src="./images/icons/icon-mir.svg" alt="mir" />
+            </div>
+            <p class="basket_paymentCardNumber">1234 56•• •••• 1234</p>
+            <p class="basket_paymentCardDate">01/30</p>
+          </div>
+          <p class="basket_paymentAnnotation">
+            Спишем оплату с карты при получении
+          </p>
+        </section>
+
+        <section class="basket_reciever">
+          <h3 class="basket_recieverTitle">Получатель</h3>
+          <div class="basket_recieverContent">
+            <div class="basket_recieverInputWrap">
+              <input
+                type="text"
+                name="name"
+                class="basket_recieverInput"
+                placeholder="Имя"
+              />
+              <label for="name" class="basket_recieverPlaceholder">Имя</label>
+              <p class="basket_recieverErrorMessage"></p>
+            </div>
+            <div class="basket_recieverInputWrap">
+              <input
+                type="text"
+                name="surname"
+                class="basket_recieverInput"
+                placeholder="Фамилия"
+              />
+              <label for="surname" class="basket_recieverPlaceholder"
+                >Фамилия</label
+              >
+              <p class="basket_recieverErrorMessage"></p>
+            </div>
+            <div class="basket_recieverInputWrap">
+              <input
+                type="text"
+                name="email"
+                class="basket_recieverInput"
+                placeholder="Почта"
+              />
+              <label for="email" class="basket_recieverPlaceholder"
+                >Почта</label
+              >
+              <p class="basket_recieverErrorMessage"></p>
+            </div>
+            <div class="basket_recieverInputWrap">
+              <input
+                type="text"
+                name="phone"
+                class="basket_recieverInput"
+                placeholder="Телефон"
+              />
+              <label for="phone" class="basket_recieverPlaceholder"
+                >Телефон</label
+              >
+              <p class="basket_recieverErrorMessage"></p>
+            </div>
+            <div class="basket_recieverInputWrap">
+              <input
+                type="text"
+                name="inn"
+                class="basket_recieverInput"
+                placeholder="ИНН"
+              />
+              <label for="inn" class="basket_recieverPlaceholder">ИНН</label>
+              <p class="basket_recieverErrorMessage">
+                Для таможенного оформления
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <div class="chargeWrap">
+        <section class="charge">
+          <h3 class="chargeTitle">
+            Итого
+            <div class="chargeAmount">2 101 063 сом</div>
+          </h3>
+          <div class="charge_caption">
+            <div class="charge_captionProducts">
+              203 товара
+              <div class="charge_captionProductsValue">2 302 048 сом</div>
+            </div>
+            <div class="charge_captionDiscount">
+              Скидка
+              <div class="charge_captionDiscountValue">−200 985 сом</div>
+            </div>
+            <div class="charge_captionDelivery">
+              Доставка
+              <div class="charge_captionDeliveryValue">Бесплатно</div>
+            </div>
+          </div>
+          <div class="charge_tooltipWrap">
+            <img
+              src="./images/icons/icon-delivery.svg"
+              alt="back-delivery"
+              class="charge_tooltipImg"
+            />
+            <p class="charge_tooltipCaption">
+              Обратная доставка товаров на склад при отказе —
+              <a class="charge_tooltipCaption-underlined" href="#">бесплатно</a>
+            </p>
+          </div>
+          <div class="charge_checkboxBlock">
+            <div class="charge_checkboxWrap">
+              <input type="checkbox" id="charge" class="charge_checkbox">
+              <label for="charge" class="charge_checkboxLabel">Списать оплату сразу</label>
+            </div>
+            <p class="charge_checkboxCaption">Спишем оплату с карты при получении</p>
+          </div>
+          <button class="charge_button">
+            Заказать
+          </button>
+
+          <div class="charge_notificationWrap">
+            <img src="./images/icons/icon-checked.svg" alt="checked">
+            <p class="charge_notification">
+              Соглашаюсь с <a href="#" class="charge_notification-underlined">правилами пользования торговой площадкой и возврата</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="footer_caption">© 2022  ООО «Товары и точка»</p>
+    </footer>
+    <section class="tabbar">
+      <div class="tabbar_iconWrap">
+        <img src="./images/icons/tabbar-icons/main.svg" alt="main">
+      </div>
+      <div class="tabbar_iconWrap">
+        <img src="./images/icons/tabbar-icons/catalog.svg" alt="catalog">
+      </div>
+      <div class="tabbar_iconWrap">
+        <img src="./images/icons/tabbar-icons/cart.svg" alt="cart">
+        <div class="basket_deliverySupplyItemAmount">3</div>
+      </div>
+      <div class="tabbar_iconWrap">
+        <img src="./images/icons/tabbar-icons/favorites.svg" alt="favourites">
+      </div>
+      <div class="tabbar_iconWrap">
+        <img src="./images/icons/tabbar-icons/profile.svg" alt="profile">
       </div>
     </section>
   </body>

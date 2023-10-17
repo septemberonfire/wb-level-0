@@ -7,9 +7,9 @@
 }
 
 .header_title {
-  font: var(--font-bold-26-24);
+  font: var(--font-bold-19-24);
   color: var(--color-white);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.1em;
 }
 
 .header_button-search {
@@ -51,5 +51,4 @@
 }
 
 @media screen and (min-width: 1024px) {
-
 }
