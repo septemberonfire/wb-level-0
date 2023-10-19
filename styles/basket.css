@@ -1,4 +1,5 @@
 @import "./variables.css";
+@import "./ui/counter.css";
 
 .basket_container {
   display: flex;
@@ -26,6 +27,7 @@
   border-radius: 6px;
   background-color: transparent;
   border: 1px solid var(--color-rulers-input);
+  cursor: pointer;
 }
 
 .basket_productCheckbox {
@@ -35,6 +37,11 @@
   border-radius: 6px;
   background-color: var(--color-white);
   border: 1px solid var(--color-rulers-input);
+  position: absolute;
+  z-index: 2;
+  top: 4px;
+  left: 4px;
+  cursor: pointer;
 }
 
 .basket_checkboxLabel {
@@ -44,6 +51,13 @@
 }
 
 .basket_separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-rulers);
+  margin-bottom: 12px;
+}
+
+.basket_productSeparator {
   width: 100%;
   height: 1px;
   background-color: var(--color-rulers);
@@ -91,19 +105,22 @@ input[type="checkbox"]:checked {
   grid-area: caption;
 }
 
+.basket_productCaptionSize {
+  display: none;
+}
+
+.basket_productCaptionProvider {
+  color: var(--color-gray);
+  font: var(--font-regular-13-16);
+  display: none;
+}
+
 .basket_productImg {
   grid-area: img;
 }
 
 .basket_productImgWrap {
   position: relative;
-}
-
-.basket_productCheckbox {
-  position: absolute;
-  z-index: 2;
-  top: 4px;
-  left: 4px;
 }
 
 .basket_productSize {
@@ -133,6 +150,8 @@ input[type="checkbox"]:checked {
   font: var(--font-bold-16-24);
   color: var(--color-black);
   letter-spacing: 0px;
+  display: flex;
+  gap: 6px;
 }
 
 .basket_productOldPrice {
@@ -147,7 +166,12 @@ input[type="checkbox"]:checked {
   color: var(--color-black);
   font: var(--font-regular-14-20);
   font-style: normal;
-  padding: 2px 0 8px 0;
+  padding: 2px 0 0 0;
+  margin-bottom: 8px;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
 .basket_productCaptionColor {
@@ -236,13 +260,26 @@ input[type="checkbox"]:checked {
 
 .basket_absentCaption {
   margin-left: 16px;
-  width: 192px;
+  /* width: 192px; */
+  width: 100%;
+}
+
+.basket_absentImgWrap {
+  position: relative;
+}
+
+.basket_absentImg {
+  max-width: 80px;
 }
 
 .basket_absentCaptionName {
   font: var(--font-regular-14-20);
   color: var(--color-gray);
-  padding-bottom: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
 .basket_absentCaptionColor {
@@ -351,19 +388,9 @@ input[type="checkbox"]:checked {
   position: relative;
 }
 
-.basket_deliverySupplyItemAmount {
-  position: absolute;
-  background-color: var(--color-orange);
+.ui_counter.basket_deliveryCounter {
   top: -8px;
   right: -2px;
-  width: fit-content;
-  border-radius: 16px;
-  padding: 1px 4px 1px 4px;
-  display: flex;
-  align-items: center;
-  height: 16px;
-  font: var(--font-semibold-10-18);
-  color: var(--color-white);
 }
 
 .basket_tooltipWrap {
@@ -402,6 +429,7 @@ input[type="checkbox"]:checked {
 .basket_paymentTitleWrap {
   display: flex;
   margin-bottom: 8px;
+  align-items: flex-end;
 }
 
 .basket_paymentCard {
@@ -436,26 +464,49 @@ input[type="checkbox"]:checked {
   padding: 16px 16px 24px 16px;
   border-radius: 16px;
   font: var(--font-regular-16-24);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .basket_recieverTitle {
   font: var(--font-bold-20-28);
-  margin-bottom: 21px;
+  margin-bottom: 8px;
+}
+
+.basket_recieverContent {
+  display: grid;
+  row-gap: 16px;
+  grid-auto-rows: minmax(56px, auto);
+}
+
+.basket_inputNameWrap {
+  display: grid;
+  row-gap: 16px;
+  grid-auto-rows: minmax(56px, auto);
+}
+
+.basket_inputPhoneWrap {
+  display: grid;
+  row-gap: 16px;
+  grid-auto-rows: minmax(56px, auto);
 }
 
 .basket_recieverInputWrap {
   border-bottom: 1px solid var(--color-rulers-input);
-  margin: 13px 0 45px 0;
+  margin: 13px 0px 13px 0px;
+  padding-bottom: 3px;
   position: relative;
+}
+
+.basket_recieverInput {
+  height: 24px;
 }
 
 .basket_recieverPlaceholder {
   position: absolute;
-  top: 0;
+  bottom: 0px;
   left: 0;
   pointer-events: none;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   color: var(--color-system-gray);
 }
 
@@ -463,15 +514,16 @@ input[type="checkbox"]:checked {
   position: absolute;
   font: var(--font-regular-12-14);
   padding-top: 4px;
+  bottom: -20px;
 }
 
 .basket_recieverInput:focus + .basket_recieverPlaceholder,
 .basket_recieverInput:not(:placeholder-shown) + .basket_recieverPlaceholder {
-  top: -15px;
+  transform: translateY(-26px);
   font: var(--font-regular-12-14);
 }
 
-::placeholder {
+.basket_recieverInput::placeholder {
   color: transparent;
 }
 
@@ -480,15 +532,260 @@ input[type="checkbox"]:checked {
 }
 
 @media screen and (min-width: 1024px) {
+  .basket {
+    margin-right: 32px;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .basket_container {
+    padding: 12px 0px;
+  }
+
+  .basket_title {
+    font: var(--font-bold-28-36);
+    letter-spacing: -0.28px;
+    margin-bottom: 27px;
+  }
+
   .basket_productsItem {
+    display: grid;
+    grid-template-columns: 106px  auto 100px 110px;
+    grid-template-rows: minmax(96px, auto) 1fr;
     grid-template-areas: "img caption btns price";
+    column-gap: 16px;
+    align-items: start;
+    margin-bottom: 16px;
+    align-items: start;
+    margin-bottom: 32px;
+  }
+  .basket_productsItem:last-child {
+    margin-bottom: 0;
+  }
+
+  .basket_products {
+    margin-bottom: 40px;
   }
 
   .basket_productBtns {
     flex-direction: column;
+    padding: 0;
+    align-items: end;
+    gap: 8px;
   }
 
   .basket_productPrice {
     flex-direction: column;
+    align-items: end;
+    width: 110px;
   }
+
+  .basket_productSize {
+    display: none;
+  }
+
+  .basket_productCaptionSize {
+    display: block;
+  }
+
+  .basket_productCaptionProvider {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .basket_productCaptionColor {
+    display: flex;
+    gap: 16px;
+  }
+
+  .basket_productSeparator {
+    display: none;
+  }
+
+  .basket_productCaptionStore {
+    padding-bottom: 2px;
+  }
+
+  .basket_dropdownButton {
+    padding: 0;
+  }
+
+  .basket_productImgWrap {
+    padding-left: 34px;
+  }
+
+  .basket_productImg,
+  .basket_absentImg {
+    width: 72px;
+    height: 96px;
+  }
+
+  .basket_productCheckbox {
+    top: 37px;
+    left: 0px;
+  }
+
+  .basket_absentCaption {
+    width: 309px;
+  }
+
+  .basket_productCaptionName {
+    overflow: unset;
+    display: flex;
+    -webkit-box-orient: unset;
+    font: var(--font-regular-16-24);
+    padding: 0;
+    width: 252px;
+  }
+
+  .basket_absentCaptionName {
+    overflow: unset;
+    display: flex;
+    -webkit-box-orient: unset;
+    font: var(--font-regular-16-24);
+    padding: 0;
+    width: 302px;
+  }
+
+  .basket_absentItem {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .basket_productBtnWrap {
+    padding: 0;
+    gap: 16px;
+  }
+
+  .basket_productCounter {
+    padding: 8px 10px 12px 12px;
+    width: 100px;
+    height: 44px;
+  }
+
+  .basket_counterMinus,
+  .basket_counterPlus {
+    font: var(--font-regular-20-24);
+  }
+
+  .basket_counterAmount {
+    font: var(--font-regular-16-24);
+  }
+
+  .basket_productRemains {
+    align-self: flex-start;
+  }
+
+  .basket_absentBtns {
+    gap: 16px;
+    margin-right: 126px;
+  }
+
+  .basket_absentItem {
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  .basket_absentCaptionColor {
+    display: flex;
+    gap: 16px;
+  }
+
+  .basket_deliveryTitle,
+  .basket_paymentTitle,
+  .basket_recieverTitle {
+    font: var(--font-bold-24-32);
+  }
+
+  .basket_delivery {
+    padding: 16px 24px 24px 24px;
+  }
+
+  .basket_deliveryTitleWrap {
+    margin-bottom: 16px;
+  }
+
+  .basket_deliveryContentWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .basket_deliveryPickpoint,
+  .basket_deliverySupply,
+  .basket_deliveryCost {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  .basket_deliveryPickpointTitle {
+    margin-right: 78px;
+  }
+
+  .basket_deliveryCostTitle {
+    margin-right: 32px;
+  }
+
+  .basket_deliverySupplyTitle {
+    margin-right: 82px;
+  }
+
+  .basket_tooltipWrap {
+    padding: 8px 0 0 0;
+    align-items: center;
+  }
+
+  .basket_tooltipCaption {
+    width: 100%;
+  }
+
+  .basket_payment {
+    padding: 16px 24px 24px 24px;
+  }
+
+  .basket_paymentTitleWrap {
+    margin-bottom: 16px;
+  }
+
+  .basket_reciever {
+    padding: 16px 24px 8px 24px;
+    margin-bottom: 0;
+  }
+
+  .basket_recieverTitle {
+    margin-bottom: 16px;
+  }
+
+  .basket_recieverContent {
+    grid-template-rows: 1fr 1fr;
+    row-gap: 12px;
+  }
+
+  .basket_inputNameWrap {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 56px;
+    height: fit-content;
+    column-gap: 24px;
+  }
+
+  .basket_inputPhoneWrap {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-rows: minmax(56px, auto);
+    column-gap: 24px;
+    align-items: end;
+  }
+
+  .basket_recieverContent {
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .basket_recieverInputWrap:last-child {
+    margin-bottom: 13px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+
 }

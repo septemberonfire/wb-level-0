@@ -8,31 +8,47 @@
   </head>
   <body>
     <header class="header">
-      <img
-        src="./images/icons/icon-burger-m.svg"
-        alt="burger-menu"
-        class="header_menu"
-      />
+      <picture class="header_menu">
+        <source
+          media="(max-width: 1023px)"
+          srcset="./images/icons/icon-burger-m.svg"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcset="./images/icons/icon-burger.svg"
+        />
+        <img src="./images/icons/icon-burger-m.svg" alt="burger-menu" />
+      </picture>
+
       <p class="header_title">ТОВАРЫ И ТОЧКА</p>
       <div class="header_inputWrap">
-        <input type="text" placeholder="Я ищу..." />
-        <img src="./images/icons/icon-search-input.svg" alt="search" />
+        <input type="text" placeholder="Я ищу..." name="search-input" />
+        <img
+          src="./images/icons/icon-search-input.svg"
+          alt="search"
+          class="header_inputButton"
+        />
       </div>
       <img
         src="./images/icons/icon-search.svg"
         alt="search"
         class="header_button-search"
       />
-      <img
-        src="./images/icons/icon-profile.svg"
-        alt="profile"
-        class="header_button-profile"
-      />
-      <img
-        src="./images/icons/icon-basket.svg"
-        alt="basket"
-        class="header_button-basket"
-      />
+      <div class="header_buttonWrap">
+        <img
+          src="./images/icons/icon-profile.svg"
+          alt="profile"
+          class="header_button-profile"
+        />
+      </div>
+      <div class="header_buttonWrap">
+        <img
+          src="./images/icons/icon-basket.svg"
+          alt="basket"
+          class="header_button-basket"
+        />
+        <div class="ui_counter header_counter">3</div>
+      </div>
     </header>
     <div class="container">
       <section class="basket">
@@ -74,8 +90,18 @@
                 <p class="basket_productCaptionName">
                   Футболка UZcotton мужская
                 </p>
-                <p class="basket_productCaptionColor">Цвет: белый</p>
+                <div class="basket_productCaptionColor">
+                  <p>Цвет: белый</p>
+                  <p class="basket_productCaptionSize">Размер: 56</p>
+                </div>
                 <p class="basket_productCaptionStore">Коледино WB</p>
+                <div class="basket_productCaptionProvider">
+                  ООО Вайлдберриз
+                  <img
+                    src="./images/icons/icon-tooltip-provider.svg"
+                    alt="provider"
+                  />
+                </div>
               </div>
               <div class="basket_productBtns">
                 <div class="basket_productCounter">
@@ -98,11 +124,11 @@
                 </div>
               </div>
               <div class="basket_productPrice">
-                <div class="basket_productActualPrice">522 сом</div>
+                <div class="basket_productActualPrice">522 <div class="basket_productCurrency">сом</div></div>
                 <div class="basket_productOldPrice">1051 сом</div>
               </div>
             </div>
-            <div class="basket_separator"></div>
+            <div class="basket_productSeparator"></div>
             <div class="basket_productsItem">
               <div class="basket_productImgWrap">
                 <input
@@ -119,10 +145,18 @@
 
               <div class="basket_productCaption">
                 <p class="basket_productCaptionName">
-                  Силиконовый чехол картхолдер (отверстия) для...
+                  Силиконовый чехол картхолдер (отверстия) для карт, прозрачный
+                  кейс бампер на Apple iPhone XR, MobiSafe
                 </p>
                 <p class="basket_productCaptionColor">Цвет: прозрачный</p>
                 <p class="basket_productCaptionStore">Коледино WB</p>
+                <div class="basket_productCaptionProvider">
+                  ООО Мегапрофстиль
+                  <img
+                    src="./images/icons/icon-tooltip-provider.svg"
+                    alt="provider"
+                  />
+                </div>
               </div>
               <div class="basket_productBtns">
                 <div class="basket_productCounter">
@@ -144,11 +178,11 @@
                 </div>
               </div>
               <div class="basket_productPrice">
-                <div class="basket_productActualPrice">2 100 047 сом</div>
+                <div class="basket_productActualPrice">2 100 047 <div class="basket_productCurrency">сом</div></div>
                 <div class="basket_productOldPrice">2 300 047 сом</div>
               </div>
             </div>
-            <div class="basket_separator"></div>
+            <div class="basket_productSeparator"></div>
             <div class="basket_productsItem">
               <div class="basket_productImgWrap">
                 <input
@@ -165,10 +199,18 @@
 
               <div class="basket_productCaption">
                 <p class="basket_productCaptionName">
-                  Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета,
+                  заточенные, шестигранные, Faber-Castell
                 </p>
 
                 <p class="basket_productCaptionStore">Коледино WB</p>
+                <div class="basket_productCaptionProvider">
+                  ООО Вайлдберриз
+                  <img
+                    src="./images/icons/icon-tooltip-provider.svg"
+                    alt="provider"
+                  />
+                </div>
               </div>
               <div class="basket_productBtns">
                 <div class="basket_productCounter">
@@ -191,7 +233,7 @@
                 </div>
               </div>
               <div class="basket_productPrice">
-                <div class="basket_productActualPrice">494 сом</div>
+                <div class="basket_productActualPrice">494 <div class="basket_productCurrency">сом</div></div>
                 <div class="basket_productOldPrice">950 сом</div>
               </div>
             </div>
@@ -209,10 +251,11 @@
             <div class="basket_absentProducts">
               <div class="basket_absentItem">
                 <div class="basket_absentInfo">
-                  <div class="basket_productImgWrap">
+                  <div class="basket_absentImgWrap">
                     <img
                       src="./images/products/absent-img1.png"
                       alt="first-absent"
+                      class="basket_absentImg"
                     />
                     <div class="basket_productSize">56</div>
                   </div>
@@ -220,7 +263,11 @@
                     <div class="basket_absentCaptionName">
                       Футболка UZcotton мужская
                     </div>
-                    <div class="basket_absentCaptionColor">Цвет: белый</div>
+                    <div class="basket_absentCaptionColor">
+                      Цвет: белый
+
+                      <p class="basket_productCaptionSize">Размер: 56</p>
+                    </div>
                   </div>
                 </div>
                 <div class="basket_absentBtns">
@@ -231,19 +278,21 @@
                   <img src="./images/icons/icon-delete.svg" alt="delete" />
                 </div>
               </div>
-              <div class="basket_separator"></div>
+              <div class="basket_productSeparator"></div>
 
               <div class="basket_absentItem">
                 <div class="basket_absentInfo">
-                  <div class="basket_productImgWrap">
+                  <div class="basket_absentImgWrap">
                     <img
                       src="./images/products/absent-img2.png"
                       alt="second-absent"
+                      class="basket_absentImg"
                     />
                   </div>
                   <div class="basket_absentCaption">
                     <div class="basket_absentCaptionName">
-                      Силиконовый чехол картхолдер (отверстия) для...
+                      Силиконовый чехол картхолдер (отверстия) для карт,
+                      прозрачный кейс бампер на Apple iPhone XR, MobiSafe
                     </div>
                     <div class="basket_absentCaptionColor">
                       Цвет: прозрачный
@@ -258,20 +307,22 @@
                   <img src="./images/icons/icon-delete.svg" alt="delete" />
                 </div>
               </div>
-              <div class="basket_separator"></div>
+              <div class="basket_productSeparator"></div>
 
               <div class="basket_absentItem">
                 <div class="basket_absentInfo">
-                  <div class="basket_productImgWrap">
+                  <div class="basket_absentImgWrap">
                     <img
                       src="./images/products/absent-img3.png"
-                      alt="second-absent"
+                      alt="third-absent"
+                      class="basket_absentImg"
                     />
                     <div class="basket_productSize">56/54/52...</div>
                   </div>
                   <div class="basket_absentCaption">
                     <div class="basket_absentCaptionName">
-                      Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета,
+                      заточенные, шестигранные, Faber-Castell
                     </div>
                   </div>
                 </div>
@@ -329,7 +380,7 @@
                     alt="second"
                     class="basket_deliverySupplyItem"
                   />
-                  <div class="basket_deliverySupplyItemAmount">184</div>
+                  <div class="ui_counter basket_deliveryCounter">184</div>
                 </div>
                 <div class="basket_deliverySupplyItemWrap">
                   <img
@@ -337,7 +388,7 @@
                     alt="third"
                     class="basket_deliverySupplyItem"
                   />
-                  <div class="basket_deliverySupplyItemAmount">2</div>
+                  <div class="ui_counter basket_deliveryCounter">2</div>
                 </div>
               </div>
             </div>
@@ -351,7 +402,7 @@
                     alt="second"
                     class="basket_deliverySupplyItem"
                   />
-                  <div class="basket_deliverySupplyItemAmount">16</div>
+                  <div class="ui_counter basket_deliveryCounter">16</div>
                 </div>
               </div>
             </div>
@@ -392,63 +443,67 @@
         <section class="basket_reciever">
           <h3 class="basket_recieverTitle">Получатель</h3>
           <div class="basket_recieverContent">
-            <div class="basket_recieverInputWrap">
-              <input
-                type="text"
-                name="name"
-                class="basket_recieverInput"
-                placeholder="Имя"
-              />
-              <label for="name" class="basket_recieverPlaceholder">Имя</label>
-              <p class="basket_recieverErrorMessage"></p>
+            <div class="basket_inputNameWrap">
+              <div class="basket_recieverInputWrap inputName">
+                <input
+                  type="text"
+                  name="name"
+                  class="basket_recieverInput"
+                  placeholder="Имя"
+                />
+                <label for="name" class="basket_recieverPlaceholder">Имя</label>
+                <p class="basket_recieverErrorMessage"></p>
+              </div>
+              <div class="basket_recieverInputWrap inputSurname">
+                <input
+                  type="text"
+                  name="surname"
+                  class="basket_recieverInput"
+                  placeholder="Фамилия"
+                />
+                <label for="surname" class="basket_recieverPlaceholder"
+                  >Фамилия</label
+                >
+                <p class="basket_recieverErrorMessage"></p>
+              </div>
             </div>
-            <div class="basket_recieverInputWrap">
-              <input
-                type="text"
-                name="surname"
-                class="basket_recieverInput"
-                placeholder="Фамилия"
-              />
-              <label for="surname" class="basket_recieverPlaceholder"
-                >Фамилия</label
-              >
-              <p class="basket_recieverErrorMessage"></p>
-            </div>
-            <div class="basket_recieverInputWrap">
-              <input
-                type="text"
-                name="email"
-                class="basket_recieverInput"
-                placeholder="Почта"
-              />
-              <label for="email" class="basket_recieverPlaceholder"
-                >Почта</label
-              >
-              <p class="basket_recieverErrorMessage"></p>
-            </div>
-            <div class="basket_recieverInputWrap">
-              <input
-                type="text"
-                name="phone"
-                class="basket_recieverInput"
-                placeholder="Телефон"
-              />
-              <label for="phone" class="basket_recieverPlaceholder"
-                >Телефон</label
-              >
-              <p class="basket_recieverErrorMessage"></p>
-            </div>
-            <div class="basket_recieverInputWrap">
-              <input
-                type="text"
-                name="inn"
-                class="basket_recieverInput"
-                placeholder="ИНН"
-              />
-              <label for="inn" class="basket_recieverPlaceholder">ИНН</label>
-              <p class="basket_recieverErrorMessage">
-                Для таможенного оформления
-              </p>
+            <div class="basket_inputPhoneWrap">
+              <div class="basket_recieverInputWrap inputEmail">
+                <input
+                  type="text"
+                  name="email"
+                  class="basket_recieverInput"
+                  placeholder="Почта"
+                />
+                <label for="email" class="basket_recieverPlaceholder"
+                  >Почта</label
+                >
+                <p class="basket_recieverErrorMessage"></p>
+              </div>
+              <div class="basket_recieverInputWrap inputPhone">
+                <input
+                  type="text"
+                  name="phone"
+                  class="basket_recieverInput"
+                  placeholder="Телефон"
+                />
+                <label for="phone" class="basket_recieverPlaceholder"
+                  >Телефон</label
+                >
+                <p class="basket_recieverErrorMessage"></p>
+              </div>
+              <div class="basket_recieverInputWrap inputInn">
+                <input
+                  type="text"
+                  name="inn"
+                  class="basket_recieverInput"
+                  placeholder="ИНН"
+                />
+                <label for="inn" class="basket_recieverPlaceholder">ИНН</label>
+                <p class="basket_recieverErrorMessage">
+                  Для таможенного оформления
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -458,7 +513,7 @@
         <section class="charge">
           <h3 class="chargeTitle">
             Итого
-            <div class="chargeAmount">2 101 063 сом</div>
+            <div class="chargeAmount">2 101 063 <div class="chargeCurrency">сом</div></div>
           </h3>
           <div class="charge_caption">
             <div class="charge_captionProducts">
@@ -474,6 +529,14 @@
               <div class="charge_captionDeliveryValue">Бесплатно</div>
             </div>
           </div>
+          <div class="charge_delivery">
+            <div class="charge_deliveryTitleWrap">
+              <h3 class="charge_deliveryTitle">Доставка в пункт выдачи</h3>
+              <img src="./images/icons/icon-correct.svg" alt="correct" class="charge_correctBtn">
+            </div>
+            <p class="charge_deliveryAddress">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+            <p><a href="#" class="charge_deliveryDate">5–8 фев</a></p>
+          </div>
           <div class="charge_tooltipWrap">
             <img
               src="./images/icons/icon-delivery.svg"
@@ -485,45 +548,62 @@
               <a class="charge_tooltipCaption-underlined" href="#">бесплатно</a>
             </p>
           </div>
+          <div class="charge_payment">
+            <div class="charge_paymentTitleWrap">
+              <h3 class="charge_paymentTitle">Оплата картой</h3>
+              <img src="./images/icons/icon-correct.svg" alt="correct" class="charge_correctBtn">
+            </div>
+            <div class="charge_paymentData">
+              <div class="charge_paymentSystem">
+                <img src="./images/icons/icon-mir.svg" alt="mir">
+              </div>
+              <div class="charge_paymentNumber">1234 12•• •••• 1234</div>
+            </div>
+          </div>
           <div class="charge_checkboxBlock">
             <div class="charge_checkboxWrap">
-              <input type="checkbox" id="charge" class="charge_checkbox">
-              <label for="charge" class="charge_checkboxLabel">Списать оплату сразу</label>
+              <input type="checkbox" id="charge" class="charge_checkbox" />
+              <label for="charge" class="charge_checkboxLabel"
+                >Списать оплату сразу</label
+              >
             </div>
-            <p class="charge_checkboxCaption">Спишем оплату с карты при получении</p>
+            <p class="charge_checkboxCaption">
+              Спишем оплату с карты при получении
+            </p>
           </div>
-          <button class="charge_button">
-            Заказать
-          </button>
+          <button class="charge_button">Заказать</button>
 
           <div class="charge_notificationWrap">
-            <img src="./images/icons/icon-checked.svg" alt="checked">
+            <img src="./images/icons/icon-checked.svg" alt="checked" />
             <p class="charge_notification">
-              Соглашаюсь с <a href="#" class="charge_notification-underlined">правилами пользования торговой площадкой и возврата</a>
+              Соглашаюсь с
+              <a href="#" class="charge_notification-underlined"
+                >правилами пользования торговой площадкой и возврата</a
+              >
             </p>
           </div>
         </section>
       </div>
     </div>
     <footer class="footer">
-      <p class="footer_caption">© 2022  ООО «Товары и точка»</p>
+      <p class="footer_caption">© 2022 ООО «Товары и точка»</p>
     </footer>
     <section class="tabbar">
       <div class="tabbar_iconWrap">
-        <img src="./images/icons/tabbar-icons/main.svg" alt="main">
+        <img src="./images/icons/tabbar-icons/main.svg" alt="main" />
       </div>
       <div class="tabbar_iconWrap">
-        <img src="./images/icons/tabbar-icons/catalog.svg" alt="catalog">
+        <img src="./images/icons/tabbar-icons/catalog.svg" alt="catalog" />
       </div>
       <div class="tabbar_iconWrap">
-        <img src="./images/icons/tabbar-icons/cart.svg" alt="cart">
-        <div class="basket_deliverySupplyItemAmount">3</div>
+        <img src="./images/icons/tabbar-icons/cart.svg" alt="cart" />
+        <div class="ui_counter tabbar_counter">3</div>
       </div>
       <div class="tabbar_iconWrap">
-        <img src="./images/icons/tabbar-icons/favorites.svg" alt="favourites">
+        <img src="./images/icons/tabbar-icons/favorites.svg" alt="favourites" />
       </div>
       <div class="tabbar_iconWrap">
-        <img src="./images/icons/tabbar-icons/profile.svg" alt="profile">
+        <img src="./images/icons/tabbar-icons/profile.svg" alt="profile" />
       </div>
     </section>
   </body>

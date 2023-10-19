@@ -1,12 +1,28 @@
 @import "./variables.css";
+@import "./ui/counter.css";
 
 .tabbar {
   background-color: var(--color-white);
   padding: 14px 13px;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
 }
 
 .tabbar_iconWrap {
   position: relative;
+}
+
+.ui_counter.tabbar_counter {
+  top: -4px;
+  right: -6px;
+}
+
+@media screen and (min-width: 1024px) {
+  .tabbar {
+    display: none;
+  }
 }

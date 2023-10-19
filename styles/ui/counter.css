@@ -1,0 +1,14 @@
+.ui_counter {
+  position: absolute;
+  background-color: var(--color-orange);
+  top: -8px;
+  right: -2px;
+  width: fit-content;
+  border-radius: 16px;
+  padding: 1px 5px 1px 5px;
+  display: flex;
+  align-items: center;
+  height: 16px;
+  font: var(--font-semibold-10-18);
+  color: var(--color-white);
+}

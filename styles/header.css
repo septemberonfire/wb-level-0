@@ -1,4 +1,5 @@
 @import "./variables.css";
+@import "./ui/counter.css";
 
 .header {
   display: flex;
@@ -46,9 +47,94 @@
   cursor: pointer;
 }
 
+.header_buttonWrap {
+  display: none;
+}
+
 .header_inputWrap {
+  display: none;
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 20px;
+}
+
+::placeholder {
+  font: var(--font-regular-18-24);
+  color: var(--color-white);
+  opacity: 0.5;
+}
+
+.ui_counter.header_counter {
   display: none;
 }
 
 @media screen and (min-width: 1024px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px 16px 24px;
+    height: 88px;
+  }
+
+  .header_menu {
+    height: 48px;
+    width: 48px;
+    margin-right: 16px;
+  }
+
+  .header_title {
+    width: 106px;
+    margin-right: 32px;
+    font-family: "Segoe UI";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 85.714% */
+    font-variant: all-small-caps;
+    letter-spacing: 2.56px;
+    flex-shrink: 0;
+  }
+
+  .header_inputWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    flex-grow: 1;
+    margin-right: 32px;
+    font: var(--font-regular-18-24);
+    color: var(--color-white);
+  }
+
+  .header_inputButton {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .header_button-search {
+    display: none;
+  }
+
+  .header_button-basket,
+  .header_button-profile {
+    display: flex;
+  }
+
+  .header_buttonWrap {
+    display: flex;
+    position: relative;
+  }
+
+  .header_button-profile {
+    margin-right: 40px;
+  }
+
+  .ui_counter.header_counter {
+    display: flex;
+    position: absolute;
+    top: -4px;
+    right: 8px;
+  }
 }

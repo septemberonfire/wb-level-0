@@ -12,19 +12,31 @@
   margin-bottom: 8px;
 }
 
+.chargeAmount {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
 .charge_caption {
   font: var(--font-regular-16-24);
   margin-bottom: 16px;
 }
 
-.charge_captionProducts, .charge_captionDiscount, .charge_captionDelivery {
+.charge_delivery {
+  display: none;
+}
+
+.charge_captionProducts,
+.charge_captionDiscount,
+.charge_captionDelivery {
   display: flex;
   justify-content: space-between;
 }
 
 .charge_tooltipWrap {
   display: flex;
-  background-color: var(--color-smoky-dark);
+  background-color: var(--color-smoky);
   padding: 8px 8px 12px 8px;
   border-radius: 8px;
   margin-bottom: 16px;
@@ -44,9 +56,13 @@
   border-bottom: 1px dashed currentColor;
 }
 
+.charge_payment {
+  display: none;
+}
+
 .charge_checkboxBlock {
   display: flex;
-  background-color: var(--color-smoky-dark);
+  background-color: var(--color-smoky);
   padding: 8px 8px 12px 8px;
   border-radius: 8px;
   margin-bottom: 16px;
@@ -96,11 +112,13 @@
 
 .charge_notificationWrap {
   display: flex;
+  align-items: flex-start;
 }
 
 .charge_notification {
   margin-left: 8px;
   font: var(--font-regular-13-16);
+  width: 90%;
 }
 
 .charge_notification-underlined {
@@ -110,9 +128,110 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .chargeWrap {
+  .charge {
     background-color: var(--color-white);
     border-radius: 16px;
+    width: 303px;
     height: fit-content;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3),
+      0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .charge {
+    padding: 16px 24px 24px 24px;
+  }
+
+  .chargeTitle {
+    font: var(--font-bold-24-32);
+  }
+
+  .chargeAmount {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .chargeCurrency {
+    font: var(--font-bold-20-28);
+  }
+
+  .charge_caption {
+    margin-bottom: 24px;
+  }
+
+  .charge_delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .charge_deliveryTitleWrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .charge_deliveryTitle {
+    font: var(--font-bold-16-24);
+  }
+
+  .charge_deliveryAddress {
+    font: var(--font-regular-13-16);
+  }
+
+  .charge_deliveryDate {
+    font: var(--font-regular-13-16);
+    color: var(--color-accent);
+    border-bottom: 1px dashed currentColor;
+  }
+
+  .charge_tooltipWrap {
+    margin-bottom: 24px;
+  }
+
+  .charge_tooltipCaption {
+    width: 100%;
+  }
+
+  .charge_payment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .charge_paymentTitleWrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .charge_paymentTitle {
+    font: var(--font-bold-16-24);
+    margin-bottom: 4px;
+  }
+
+  .charge_paymentSystem {
+    background-color: var(--color-smoky);
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+
+  .charge_paymentNumber {
+    font: var(--font-regular-13-16);
+  }
+
+  .charge_paymentData {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .charge {
+    width: 429px;
   }
 }
