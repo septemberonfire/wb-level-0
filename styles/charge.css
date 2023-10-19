@@ -42,6 +42,10 @@
   margin-bottom: 16px;
 }
 
+.charge_correctBtn {
+  cursor: pointer;
+}
+
 .charge_tooltipCaption {
   margin-left: 8px;
 }
@@ -76,6 +80,7 @@
   border-radius: 6px;
   background-color: transparent;
   border: 1px solid var(--color-rulers-input);
+  cursor: pointer;
 }
 
 .charge_checkbox:checked {

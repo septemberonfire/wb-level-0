@@ -72,6 +72,11 @@ input[type="checkbox"]:checked {
 
 .basket_dropdownButton {
   padding: 0 4px;
+  cursor: pointer;
+}
+
+.basket_dropdownButton-closed {
+  transform: rotate(180deg);
 }
 
 .basket_products {
@@ -160,6 +165,7 @@ input[type="checkbox"]:checked {
   font-style: normal;
   border-bottom: 1px dashed currentColor;
   text-decoration: line-through;
+  cursor: pointer;
 }
 
 .basket_productCaptionName {
@@ -229,11 +235,21 @@ input[type="checkbox"]:checked {
 .basket_productFavourite {
   width: 20px;
   height: 20px;
+  cursor: pointer;
+}
+
+.basket_productFavourite:hover path {
+  fill: var(--color-accent);
 }
 
 .basket_productDelete {
   width: 20px;
   height: 20px;
+  cursor: pointer;
+}
+
+.basket_productDelete:hover path {
+  fill: var(--color-orange);
 }
 
 .basket_productBtnWrap {
@@ -260,7 +276,6 @@ input[type="checkbox"]:checked {
 
 .basket_absentCaption {
   margin-left: 16px;
-  /* width: 192px; */
   width: 100%;
 }
 
@@ -270,6 +285,7 @@ input[type="checkbox"]:checked {
 
 .basket_absentImg {
   max-width: 80px;
+  filter: grayscale(1);
 }
 
 .basket_absentCaptionName {
@@ -424,6 +440,7 @@ input[type="checkbox"]:checked {
 .basket_paymentChanger {
   font: var(--font-bold-16-24);
   color: var(--color-accent);
+  cursor: pointer;
 }
 
 .basket_paymentTitleWrap {
@@ -605,6 +622,10 @@ input[type="checkbox"]:checked {
 
   .basket_productCaptionStore {
     padding-bottom: 2px;
+  }
+
+  .basket_productProviderBtn {
+    cursor: pointer;
   }
 
   .basket_dropdownButton {
