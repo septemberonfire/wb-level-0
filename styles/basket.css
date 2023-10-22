@@ -57,13 +57,6 @@
   margin-bottom: 12px;
 }
 
-.basket_productSeparator {
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-rulers);
-  margin-bottom: 12px;
-}
-
 input[type="checkbox"]:checked {
   background-color: var(--color-accent);
   border: none;
@@ -90,11 +83,20 @@ input[type="checkbox"]:checked {
   grid-template-areas:
     "img price"
     "img caption"
-    "btns btns";
+    "btns btns"
+    "separator separator";
   column-gap: 16px;
   align-items: start;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   align-items: start;
+}
+
+.basket_productSeparator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-rulers);
+  margin-top: 16px;
+  grid-area: separator;
 }
 
 .basket_productBtns {
@@ -212,6 +214,14 @@ input[type="checkbox"]:checked {
   padding-bottom: 5px;
 }
 
+.basket_counterMinus:disabled {
+  color: var(--color-rulers-input);
+}
+
+.basket_counterPlus:disabled {
+  color: var(--color-rulers-input);
+}
+
 .basket_counterAmount {
   font: var(--font-regular-14-20);
 }
@@ -301,6 +311,13 @@ input[type="checkbox"]:checked {
 .basket_absentCaptionColor {
   font: var(--font-regular-13-16);
   color: var(--color-gray);
+}
+
+.basket_absentProductSeparator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-rulers);
+  margin-bottom: 12px;
 }
 
 .basket_absentBtns {
@@ -609,6 +626,7 @@ input[type="checkbox"]:checked {
     display: flex;
     gap: 6px;
     align-items: center;
+    position: relative;
   }
 
   .basket_productCaptionColor {
@@ -626,6 +644,7 @@ input[type="checkbox"]:checked {
 
   .basket_productProviderBtn {
     cursor: pointer;
+    
   }
 
   .basket_dropdownButton {
@@ -649,6 +668,10 @@ input[type="checkbox"]:checked {
 
   .basket_absentCaption {
     width: 309px;
+  }
+
+  .basket_absentProductSeparator {
+    display: none;
   }
 
   .basket_productCaptionName {
@@ -804,6 +827,36 @@ input[type="checkbox"]:checked {
 
   .basket_recieverInputWrap:last-child {
     margin-bottom: 13px;
+  }
+
+  .basket_providerTooltip {
+    position: absolute;
+    z-index: 5;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    padding: 11px 16px 13px 16px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.30)) drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.15));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    top: 21px;
+    width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+
+  .basket_productProviderBtn:hover > .basket_providerTooltip {
+    opacity: 1;
+  }
+
+  .basket_providerName {
+    font: var(--font-bold-13-16);
+  }
+
+  .basket_providerOgrn, .basket_providerAddress {
+    font: var(--font-regular-13-16);
   }
 }
 

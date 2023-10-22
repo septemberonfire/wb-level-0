@@ -3,7 +3,9 @@ export default function drawAvailableItems(products) {
   let allProductsString = "";
 
   products.forEach((element) => {
-    const productActualItemHTML = `<div class="basket_productsItem">
+    const productActualItemHTML = `<div class="basket_productsItem" data-id="${
+      element.id
+    }">
     <div class="basket_productImgWrap">
     <input
     type="checkbox"
@@ -11,7 +13,11 @@ export default function drawAvailableItems(products) {
     name="first"
     class="basket_productCheckbox"
     />
-    <div class="basket_productSize">${element.size}</div>
+    ${
+      Boolean(element.size)
+        ? `<div class="basket_productSize">${element.size}</div>`
+        : ""
+    }
     <img
     src="${element.img}"
     class="basket_productImg"
@@ -36,23 +42,36 @@ export default function drawAvailableItems(products) {
     }
       <p class="basket_productCaptionStore">${element.store}</p>
     <div class="basket_productCaptionProvider">
-      ${element.provider}
+      ${element.provider.name}
       <img
       src="./images/icons/icon-tooltip-provider.svg"
       alt="provider"
       class="basket_productProviderBtn"
       />
+      <div class="basket_providerTooltip">
+      <h3 class="basket_providerName">${element.provider.tooltipName}</h3>
+      <p class="basket_providerOgrn">${element.provider.ogrn}</p>
+      <p class="basket_providerAddress">${element.provider.address}</p>
+      </div>
       </div>
       </div>
       <div class="basket_productBtns">
       <div class="basket_productCounter">
-      <div class="basket_counterMinus">−</div>
+      <button class="basket_counterMinus" ${
+        element.amount.picked === 1 ? `disabled` : ""
+      }>−</button>
       <div class="basket_counterAmount">${element.amount.picked}</div>
-      <div class="basket_counterPlus">+</div>
+      <button class="basket_counterPlus" ${
+        element.amount.all === 0 ? `disabled` : ""
+      }>+</button>
       </div>
-      <p class="basket_productRemains">Осталось ${
-        element.amount.all - element.amount.picked
-      } шт.</p>
+      ${
+        element.amount.inStock < 10
+          ? `<p class="basket_productRemains">Осталось ${
+              element.amount.all - element.amount.picked
+            } шт.</p>`
+          : ""
+      }
       <div class="basket_productBtnWrap">
       <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -100,15 +119,22 @@ export default function drawAvailableItems(products) {
   </div>
   <div class="basket_productPrice">
   <div class="basket_productActualPrice">
+  <div class="basket_productActualPriceValue">
   ${element.actualPrice * element.amount.picked}
+  </div>
   <div class="basket_productCurrency">сом</div>
   </div>
   <div class="basket_productOldPrice">${
     element.oldPrice * element.amount.picked
   } сом</div>
   </div>
+  ${
+    element == products[products.length - 1]
+      ? ""
+      : `<div class="basket_productSeparator"></div>`
+  }
   </div>
-  <div class="basket_productSeparator"></div>`;
+  `;
 
     allProductsString = `${allProductsString} ${productActualItemHTML}`;
     productContainer.innerHTML = allProductsString;

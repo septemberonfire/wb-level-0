@@ -5,7 +5,12 @@ export const products = [
     name: 'Футболка UZcotton мужская',
     color: 'белый',
     store: 'Коледино WB',
-    provider: 'ООО Вайлдберриз',
+    provider: {
+      name: 'ООО Вайлдберриз',
+      tooltipName: 'ООО "ВАЙЛДБЕРРИЗ"',
+      ogrn: '1067746062449',
+      address: '142181, Московская Область, Подольск, Д Коледино, Д. 6 СТР. 1'
+    },
     amount: {
       all: 3,
       picked: 1,
@@ -22,14 +27,19 @@ export const products = [
     name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
     color: 'прозрачный',
     store: 'Коледино WB',
-    provider: 'ООО Мегапрофстиль',
+    provider: {
+      name: 'ООО Мегапрофстиль',
+      tooltipName: 'ООО "МЕГАПРОФСТИЛЬ"',
+      ogrn: '5167746237148',
+      address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+    },
     amount: {
       all: 300,
-      picked: 1,
+      picked: 200,
       inStock: 184
     },
-    actualPrice: 10500.235,
-    oldPrice: 11500.235,
+    actualPrice: 10500,
+    oldPrice: 11500,
     id: 2,
     isChosen: true
   },
@@ -39,7 +49,12 @@ export const products = [
     name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
     color: '',
     store: 'Коледино WB',
-    provider: 'ООО Вайлдберриз',
+    provider: {
+      name: 'ООО Вайлдберриз',
+      tooltipName: 'ООО "ВАЙЛДБЕРРИЗ"',
+      ogrn: '1067746062449',
+      address: '142181, Московская Область, Подольск, Д Коледино, Д. 6 СТР. 1'
+    },
     amount: {
       all: 4,
       picked: 1,

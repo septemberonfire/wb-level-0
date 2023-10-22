@@ -12,7 +12,7 @@ export default function drawUnavailableItems (products) {
     alt="first-absent"
     class="basket_absentImg"
     />
-    <div class="basket_productSize">${element.size}</div>
+    ${ Boolean(element.size) ? `<div class="basket_productSize">${element.size}</div>` : ''}
     </div>
     <div class="basket_absentCaption">
     <div class="basket_absentCaptionName">
@@ -69,8 +69,9 @@ export default function drawUnavailableItems (products) {
       />
     </svg>
   </div>
+  ${ element == products[products.length -1] ? '' : `<div class="basket_absentProductSeparator"></div>`}
 </div>
-<div class="basket_productSeparator"></div>`
+`
 
 allAbsentProductsString = `${allAbsentProductsString} ${productAbsentHTML}`
 absentProductContainer.innerHTML = allAbsentProductsString

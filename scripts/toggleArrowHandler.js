@@ -8,7 +8,6 @@ export const toggleHandler = (e) => {
   const currentSection = isAvailableProductSection
     ? availableSection
     : unavailableSection;
-  console.log(currentSection);
 
   if (currentEl.classList.contains("basket_dropdownButton-closed")) {
     currentSection.style.display = "grid";
