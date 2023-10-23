@@ -7,6 +7,11 @@
   padding: 0px 16px;
 }
 
+.basket_empty {
+  font: var(--font-bold-20-28);
+  color: var(--color-black);
+}
+
 .basket_title {
   font: var(--font-bold-20-28);
   margin-bottom: 16px;
@@ -151,6 +156,31 @@ input[type="checkbox"]:checked {
   align-items: baseline;
   align-self: stretch;
   padding-bottom: 4px;
+  position: relative;
+}
+
+.basket_priceTooltip {
+  display: flex;
+  flex-direction: column;
+  padding: 11px 16px 13px 16px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  width: 239px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+.basket_priceTooltipDiscount, .basket_priceTooltipPersonalDiscount {
+  display: flex;
+  justify-content: space-between;
+  font: var(--font-regular-13-16);
+  color: var(--color-system-gray);
+  gap: 8px;
 }
 
 .basket_productActualPrice {
@@ -430,6 +460,7 @@ input[type="checkbox"]:checked {
   display: flex;
   padding: 0 8px;
   gap: 8px;
+  position: relative;
 }
 
 .basket_tooltipCaption {
@@ -440,6 +471,22 @@ input[type="checkbox"]:checked {
 .basket_tooltipCaption-underlined {
   color: var(--color-green);
   border-bottom: 1px dashed currentColor;
+}
+
+.basket_deliveryTooltip {
+  position: absolute;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  height: 56px;
+  width: 288px;
+  padding: 10px 16px 14px 16px;
+  font: var(--font-regular-13-16);
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  top: 32px;
+  left: 12px;
+  transition: all 0.2s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .basket_payment {
@@ -774,6 +821,14 @@ input[type="checkbox"]:checked {
     margin-right: 82px;
   }
 
+  .basket_deliveryTooltip {
+    top: 32px;
+    left: 240px;
+    transition: all 0.2s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .basket_tooltipWrap {
     padding: 8px 0 0 0;
     align-items: center;
@@ -857,6 +912,40 @@ input[type="checkbox"]:checked {
 
   .basket_providerOgrn, .basket_providerAddress {
     font: var(--font-regular-13-16);
+  }
+
+  .basket_priceTooltip {
+    display: flex;
+    flex-direction: column;
+    padding: 11px 16px 13px 16px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    width: 239px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+
+  .basket_priceTooltipDiscount, .basket_priceTooltipPersonalDiscount {
+    display: flex;
+    justify-content: space-between;
+    font: var(--font-regular-13-16);
+    color: var(--color-system-gray);
+    gap: 8px;
+  }
+
+  
+
+  .basket_priceTooltipDiscountValue, .basket_priceTooltipPersonalDiscountValue {
+    color: var(--color-black);
+  }
+
+  .basket_priceTooltipDiscount {
+    padding-bottom: 8px;
   }
 }
 

@@ -1,4 +1,4 @@
-export default function tooltipHandler() {
+export default function productTooltipHandler() {
   window.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("basket_productProviderBtn")) {
       const CurrentElement = event.target.closest(".basket_productsItem");

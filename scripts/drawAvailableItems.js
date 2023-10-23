@@ -124,9 +124,15 @@ export default function drawAvailableItems(products) {
   </div>
   <div class="basket_productCurrency">сом</div>
   </div>
+  
   <div class="basket_productOldPrice">${
     element.oldPrice * element.amount.picked
   } сом</div>
+  <div class="basket_priceTooltip">
+  <div class="basket_priceTooltipDiscount">Скидка 55% <div class="basket_priceTooltipDiscountValue">−300 сом</div></div>
+  <div class="basket_priceTooltipPersonalDiscount">Скидка покупателя 10% <div class="basket_priceTooltipPersonalDiscountValue">−30 сом</div></div>
+
+  </div>
   </div>
   ${
     element == products[products.length - 1]
