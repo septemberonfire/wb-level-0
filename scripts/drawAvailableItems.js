@@ -1,23 +1,24 @@
+import formatNum from "./helpers/formatNum.js"
+
 export default function drawAvailableItems(products) {
   const productContainer = document.querySelector(".basket_products");
   let allProductsString = "";
 
   products.forEach((element) => {
-    const productActualItemHTML = `<div class="basket_productsItem" data-id="${
-      element.id
-    }">
+    const productActualItemHTML = `<div class="basket_productsItem" data-id="${element.id
+      }">
     <div class="basket_productImgWrap">
     <input
     type="checkbox"
     id="first"
     name="first"
     class="basket_productCheckbox"
+    checked
     />
-    ${
-      Boolean(element.size)
+    ${Boolean(element.size)
         ? `<div class="basket_productSize">${element.size}</div>`
         : ""
-    }
+      }
     <img
     src="${element.img}"
     class="basket_productImg"
@@ -28,18 +29,16 @@ export default function drawAvailableItems(products) {
     <p class="basket_productCaptionName">
     ${element.name}
     </p>
-    ${
-      element.color || element.size
+    ${element.color || element.size
         ? `<div class="basket_productCaptionColor">
       ${element.color ? `<p>Цвет: ${element.color}</p>` : ""}
-      ${
-        element.size
+      ${element.size
           ? `<p class="basket_productCaptionSize">Размер: ${element.size}</p>`
           : ""
-      }
+        }
       </div>`
         : ""
-    }
+      }
       <p class="basket_productCaptionStore">${element.store}</p>
     <div class="basket_productCaptionProvider">
       ${element.provider.name}
@@ -57,20 +56,16 @@ export default function drawAvailableItems(products) {
       </div>
       <div class="basket_productBtns">
       <div class="basket_productCounter">
-      <button class="basket_counterMinus" ${
-        element.amount.picked === 1 ? `disabled` : ""
+      <button class="basket_counterMinus" ${element.amount.picked === 1 ? `disabled` : ""
       }>−</button>
       <div class="basket_counterAmount">${element.amount.picked}</div>
-      <button class="basket_counterPlus" ${
-        element.amount.all === 0 ? `disabled` : ""
+      <button class="basket_counterPlus" ${element.amount.all === 0 ? `disabled` : ""
       }>+</button>
       </div>
-      ${
-        element.amount.inStock < 10
-          ? `<p class="basket_productRemains">Осталось ${
-              element.amount.all - element.amount.picked
-            } шт.</p>`
-          : ""
+      ${element.amount.inStock < 10
+        ? `<p class="basket_productRemains">Осталось ${element.amount.all - element.amount.picked
+        } шт.</p>`
+        : ""
       }
       <div class="basket_productBtnWrap">
       <svg
@@ -119,30 +114,34 @@ export default function drawAvailableItems(products) {
   </div>
   <div class="basket_productPrice">
   <div class="basket_productActualPrice">
-  <div class="basket_productActualPriceValue">
-  ${element.actualPrice * element.amount.picked}
+  <div class="basket_productActualPriceValue" ${ element.actualPrice * element.amount.picked < 1000000 ? `style="font: var(--font-bold-20-28)` : ''}">
+  ${formatNum(element.actualPrice * element.amount.picked)}
   </div>
   <div class="basket_productCurrency">сом</div>
   </div>
   
-  <div class="basket_productOldPrice">${
-    element.oldPrice * element.amount.picked
-  } сом</div>
+  <span class="basket_productOldPrice">${formatNum(element.oldPrice * element.amount.picked)
+      } сом</span>
   <div class="basket_priceTooltip">
   <div class="basket_priceTooltipDiscount">Скидка 55% <div class="basket_priceTooltipDiscountValue">−300 сом</div></div>
   <div class="basket_priceTooltipPersonalDiscount">Скидка покупателя 10% <div class="basket_priceTooltipPersonalDiscountValue">−30 сом</div></div>
 
   </div>
   </div>
-  ${
-    element == products[products.length - 1]
-      ? ""
-      : `<div class="basket_productSeparator"></div>`
-  }
+  ${element == products[products.length - 1]
+        ? ""
+        : `<div class="basket_productSeparator"></div>`
+      }
   </div>
   `;
 
     allProductsString = `${allProductsString} ${productActualItemHTML}`;
     productContainer.innerHTML = allProductsString;
+
+    if ((element.actualPrice * element.amount.picked) < 1000000) {
+      // productContainer.querySelector('.basket_productActualPriceValue').style.fontSize = '20px'
+      // productContainer.querySelector('.basket_productActualPriceValue').style.lineHeight = '28px'
+      // productContainer.querySelector('.basket_productActualPriceValue').style.font = 'var(--font-bold-20-28)'
+    }
   });
 }

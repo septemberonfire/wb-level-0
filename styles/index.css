@@ -4,6 +4,9 @@
 @import "./charge.css";
 @import "./footer.css";
 @import "./tabbar.css";
+@import "./ui/deliveryPopup.css";
+@import "./ui/paymentPopup.css";
+
 
 @font-face {
   font-family: "Segoe UI";

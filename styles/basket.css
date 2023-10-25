@@ -189,6 +189,7 @@ input[type="checkbox"]:checked {
   letter-spacing: 0px;
   display: flex;
   gap: 6px;
+  align-items: baseline;
 }
 
 .basket_productOldPrice {
@@ -430,6 +431,8 @@ input[type="checkbox"]:checked {
 
 .basket_deliverySupply {
   margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .basket_deliverySupplyTitle {
@@ -701,6 +704,12 @@ input[type="checkbox"]:checked {
   .basket_productImgWrap {
     padding-left: 34px;
   }
+
+
+  .basket_deliverySupply {
+    flex-direction: row;
+  }
+
 
   .basket_productImg,
   .basket_absentImg {

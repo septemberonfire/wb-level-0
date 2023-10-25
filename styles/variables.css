@@ -29,4 +29,7 @@
   --color-green: rgba(12, 180, 119, 1);
   --color-system-gray: rgba(160, 160, 164, 1);
   --color-smoky-dark: rgba(240, 236, 244, 1);
+  --color-modal-background: rgba(5, 0, 10, 0.30);
+  --color-button-active: #CB11AB;
+  --color-button: rgba(203, 17, 171, 0.15);
 }

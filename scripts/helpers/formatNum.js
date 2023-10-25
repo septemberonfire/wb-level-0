@@ -1,0 +1,1 @@
+export default (number) => new Intl.NumberFormat('RU-ru').format(number)

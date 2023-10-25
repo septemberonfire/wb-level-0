@@ -16,7 +16,6 @@ export default function productTooltipHandler() {
         tooltipWindow.addEventListener("mouseover", () => {
           tooltipWindow.style.opacity = "1";
           tooltipWindow.style.visibility = "visible";
-          console.log("blegh");
         });
 
         tooltipWindow.addEventListener("mouseout", () => {
